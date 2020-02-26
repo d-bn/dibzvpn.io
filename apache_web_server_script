@@ -19,3 +19,19 @@ apt-get install libssh2-1-dev libssh2-php
 php -m |grep ssh2
 apt-get install php5-curl
 service apache2 restart
+
+=====OPTIONAL WEBMIN=====
+
+deb http://download.webmin.com/download/repository sarge contrib
+nano /etc/apt/sources.list
+wget http://www.webmin.com/jcameron-key.asc
+sudo apt-key add jcameron-key.asc
+sudo apt-get update
+sudo apt-get install webmin
+
+=====ANTI-DDOS=====
+
+wget https://github.com/jgmdev/ddos-deflate/archive/master.zip -O ddos.zip
+unzip ddos.zip
+cd ddos-deflate-master
+./install.sh
